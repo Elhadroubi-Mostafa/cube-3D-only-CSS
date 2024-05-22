@@ -1,0 +1,84 @@
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+ body{
+  height: 100vh;
+  background: radial-gradient(rgb(5, 221, 245), rgb(6, 150, 253));
+ }
+ .container{
+  height: 60vh;
+  width: 30vw;
+  /* background: green; */
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+ }
+ .box{
+  height: 250px;
+  width: 250px;
+  /* background-color: black; */
+  border: 2px solid white;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  /* transform: translate(-50%, -50%); */
+  transform-style: preserve-3d;
+  /* transform: rotateY(270deg); */
+  animation: box 3s infinite;
+}
+@keyframes box {
+  0%{
+    transform: rotateY(30deg) rotateX(50deg);
+  }
+  25%{
+    transform: rotateY(60deg) rotateX(-50deg);
+  }
+  50%{
+    transform: rotateY(-30deg) rotateZ(50deg);
+  }
+  75%{
+    transform: rotateX(30deg) rotateZ(120deg);
+  }
+  0%{
+    transform: rotateX(30deg) rotateY(-50deg);
+  }
+
+}
+.card{
+  width: 250px;
+  height: 250px;
+  background: black;
+  text-align: center;
+  padding: 100px 0;
+  color: white;
+  border: 2px solid white;
+  font-size: 32px;
+  position: absolute;
+}
+.left{
+  right: 125px;
+  transform: rotateY(-90deg);
+}
+.right{
+  left: 125px;
+  transform: rotateY(90deg);
+}
+.top{
+  bottom: 125px;
+  transform: rotateX(-90deg);
+}
+.bottom{
+  bottom: -125px;
+  transform: rotateX(90deg);
+}
+.front{
+  
+  transform: translateZ(125px);
+}
+.back{
+  transform: translateZ(-125px);
+}
